@@ -87,6 +87,14 @@ void loop() {
   display.print(filteredLux);
   display.display();
 
+  // Print the same data to the serial monitor
+  Serial.print("Temp: ");
+  Serial.print(filteredTemperature, 1);
+  Serial.print(" C, Hum: ");
+  Serial.print(filteredHumidity, 1);
+  Serial.print(" %, Lux: ");
+  Serial.println(filteredLux);
+
   if (filteredLux < 100) { 
     digitalWrite(motorPin, HIGH);
   } else {
